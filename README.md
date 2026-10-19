@@ -77,6 +77,32 @@ A Logistic Regression classifier was trained using scikit-learn.
 - **Test set:** 20%
 - **Preprocessing:** Median imputation and standardisation for numerical features; most-frequent imputation and one-hot encoding for categorical features.
 
+### Confusion Matrix
+
+The confusion matrix on the test dataset is:
+
+```text
+[[917 116]
+ [160 214]]
+```
+
+| | Predicted: Stayed | Predicted: Churned |
+|---|---:|---:|
+| **Actual: Stayed** | 917 | 116 |
+| **Actual: Churned** | 160 | 214 |
+
+- **True negatives (917):** Customers who stayed and were correctly predicted to stay.
+- **False positives (116):** Customers predicted to churn who actually stayed.
+- **False negatives (160):** Customers who churned but were not identified by the model.
+- **True positives (214):** Customers who churned and were correctly identified.
+
+### Why Model Evaluation Matters
+
+A business should not rely on predictions based on accuracy alone. In this project, the model achieved 80.38% accuracy, but it identified only 57.22% of customers who actually churned.
+
+If the company used these predictions for retention campaigns, some customers at risk of leaving could be missed, while other customers might receive unnecessary retention offers. The business should evaluate precision, recall, the confusion matrix, and the costs of different prediction errors before using the model to guide real decisions.
+
+
 ### Evaluation Results
 
 | Metric | Result |
